@@ -28,6 +28,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//reset the global store
 				setStore({ contacts: newContacts });
 			},
+			updateContact: (contact, index) => {
+				let store = getStore();
+				store.contacts[index] = contact;
+				setStore({ contacts: store.contacts });
+			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");

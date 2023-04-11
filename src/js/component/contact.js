@@ -30,7 +30,7 @@ const Contact = (props) => {
                 </div>
             </div>
             <div className="actions">
-                <button className="btn"><FontAwesomeIcon className="actionIcons" icon={faPencil} /></button>
+                <button className="btn" onClick={() => props.onUpdate()}><FontAwesomeIcon className="actionIcons" icon={faPencil} /></button>
                 <button className="btn" onClick={() => props.onDelete()}><FontAwesomeIcon className="actionIcons" icon={faTrashCan} /></button>
             </div>
         </div>
@@ -41,6 +41,7 @@ const Contact = (props) => {
 Contact.propTypes = {
     history: propTypes.object,
     onDelete: propTypes.func,
+    onUpdate: propTypes.func,
     name: propTypes.string,
     address: propTypes.string,
     phone: propTypes.string,
