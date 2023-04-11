@@ -1,17 +1,15 @@
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import golden from "../../img/golden.jpg";
+import Contact from "../component/contact";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
+			contacts: [
+				{ name: "Cristian Yanza", address: "Colombia", email: "cristian@example.com", phone: "(870) 288-4149", img: golden },
+				{ name: "Cristian Yanza", address: "Colombia", email: "cristian@example.com", phone: "(870) 288-4149", img: golden },
+				{ name: "Cristian Yanza", address: "Colombia", email: "cristian@example.com", phone: "(870) 288-4149", img: golden },
+				{ name: "Cristian Yanza", address: "Colombia", email: "cristian@example.com", phone: "(870) 288-4149", img: golden }
 			]
 		},
 		actions: {

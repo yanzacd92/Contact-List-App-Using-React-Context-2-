@@ -1,39 +1,50 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faPhoneFlip, faEnvelope, faPencil, faTrashCan } from '@fortawesome/free-solid-svg-icons';
-
-import golden from "../../img/golden.jpg";
+import propTypes from "prop-types";
 
 //create your first component
-const Contact = () => {
+const Contact = (props) => {
 	return (
 		<div className="card">
-            <img src={golden} className="image" alt="..." />
-            <div className="info">
-                <div className="card-body">
-                    <h5 className="card-title">Mike Anamendolla</h5>
+            <div className="content">
+                <img src={props.img} className="image" alt={props.name} />
+                <div className="info">
+                    <div className="card-body">
+                        <h5 className="card-title">{props.name}</h5>
+                    </div>
+                    <ul className="list-group list-group-flush">
+                        <li className="list-group-item">
+                            <FontAwesomeIcon icon={faLocationDot} />
+                            <span>{props.address}</span>
+                        </li>
+                        <li className="list-group-item">
+                            <FontAwesomeIcon icon={faPhoneFlip} />
+                            <span>{props.phone}</span>
+                        </li>
+                        <li className="list-group-item">
+                            <FontAwesomeIcon icon={faEnvelope} />
+                            <span>{props.email}</span>
+                        </li>
+                    </ul>
                 </div>
-                <ul className="list-group list-group-flush">
-                    <li className="list-group-item">
-                        <FontAwesomeIcon icon={faLocationDot} />
-                        <span>5842 Hillcrest Rd</span>
-                    </li>
-                    <li className="list-group-item">
-                        <FontAwesomeIcon icon={faPhoneFlip} />
-                        <span>(870) 288-4149</span>
-                    </li>
-                    <li className="list-group-item">
-                        <FontAwesomeIcon icon={faEnvelope} />
-                        <span>mike.ana@example.com</span>
-                    </li>
-                </ul>
             </div>
-            <div className="card-body">
-                <a href="#" className="card-link"><FontAwesomeIcon icon={faPencil} /></a>
-                <a href="#" className="card-link"><FontAwesomeIcon icon={faTrashCan} /></a>
+            <div className="actions">
+                <button className="btn"><FontAwesomeIcon className="actionIcons" icon={faPencil} /></button>
+                <button className="btn" onClick={() => props.onDelete()}><FontAwesomeIcon className="actionIcons" icon={faTrashCan} /></button>
             </div>
         </div>
 	);
 };
 
+
+Contact.propTypes = {
+    history: propTypes.object,
+    onDelete: propTypes.func,
+    name: propTypes.string,
+    address: propTypes.string,
+    phone: propTypes.string,
+    email: propTypes.string,
+    img: propTypes.string
+}
 export default Contact;
