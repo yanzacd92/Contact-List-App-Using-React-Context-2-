@@ -1,4 +1,4 @@
-.addContact {
+.add-contact {
     background-color: #04a004;
 }
 
@@ -71,4 +71,8 @@ svg {
 
 .actionIcons {
     color: black;
+}
+.form-label {
+    width: 100%;
+    display: flex;
 }

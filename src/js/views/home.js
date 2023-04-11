@@ -1,5 +1,6 @@
 import React, {useContext, useState} from "react";
 import Contact from "../component/contact";
+import Modal from "../component/modal";
 import {Context} from "../store/appContext";
 import "../../styles/home.css";
 import rigo from "../../img/rigo-baby.jpg";
@@ -9,6 +10,7 @@ export const Home = () => {
 	const {contacts} = store;
 	return(
 		<div className="text-center mt-5">
+			<Modal />
 			<div className="list-group">
 				{contacts.map( (contact, index) =>
 					<Contact 
