@@ -16,6 +16,7 @@ export const Home = () => {
 						address={contact.address} 
 						email={contact.email}
 						img={contact.img}
+						onDelete={() => actions.delContact(index)}
 						phone={contact.phone}
 					/>
 				)}
