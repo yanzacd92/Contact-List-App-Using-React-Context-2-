@@ -1,6 +1,4 @@
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import golden from "../../img/golden.jpg";
-import Contact from "../component/contact";
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {

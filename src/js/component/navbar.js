@@ -1,10 +1,7 @@
-import React, {useContext} from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { Context } from "../store/appContext";
-import golden from "../../img/golden.jpg";
 
 export const Navbar = () => {
-	const {actions} = useContext(Context);
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
 			<Link to="/">
