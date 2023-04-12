@@ -2,14 +2,6 @@ import React, {useContext, useRef} from "react";
 import { Context } from "../store/appContext";
 import golden from "../../img/golden.jpg";
 
-
-const resetForm = () => {
-    fullname.current.value = "";
-    email.current.value = "";
-    phone.current.value = "";
-    address.current.value = "";
-}
-
 //create your first component
 const Form = () => {
     const {actions} = useContext(Context)
@@ -39,7 +31,7 @@ const Form = () => {
             </form>
             <div className="modal-footer">
                 <button type="button" className="save-button btn btn-primary" onClick={() => actions.addContact({ name: fullname.current.value, address: address.current.value, email: email.current.value, phone: phone.current.value, img: golden })}>Save</button>
-                <a className="back btn" data-bs-dismiss="modal" onClick={() => resetForm()}>or get back to contacts</a>
+                <a className="back btn" data-bs-dismiss="modal">or get back to contacts</a>
             </div>
         </div>
 	);
