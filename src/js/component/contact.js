@@ -31,7 +31,7 @@ const Contact = (props) => {
             </div>
             <div className="actions">
                 <button className="btn" onClick={() => props.onUpdate()}><FontAwesomeIcon className="actionIcons" icon={faPencil} /></button>
-                <button className="btn" onClick={() => props.onDelete()}><FontAwesomeIcon className="actionIcons" icon={faTrashCan} /></button>
+                <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><FontAwesomeIcon className="actionIcons" icon={faTrashCan} /></button>
             </div>
         </div>
 	);
